@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>W3.CSS Template</title>
+        <title>Santhosh and Arthi</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -22,30 +22,31 @@
                 line-height: 2
             }
 
-            .bgimg,
-            .bgimg2 {
+            .bgimg,.bgimg2 {
                 min-height: 100%;
                 background-position: center;
                 background-size: cover;
             }
-
+			
             .bgimg {
-                background-image: url("images/1J4A7066.jpg")
+                background-image: url("images/ring.JPG")
             }
 
             .bgimg2 {
-                background-image: url("https://www.w3schools.com/w3images/flowers.jpg")
+                background-image: url("images/welcome.JPG")
             }
         </style>
+		
+    </div>
     </head>
 <body>
 
     <!-- Header / Home-->
     <header class="w3-display-container w3-wide bgimg w3-grayscale-min" id="home">
-        <div class="w3-display-middle w3-text-black w3-center">
-            <h1 class="w3-jumbo">Arthi & Santhosh</h1>
-            <h2>Are getting married</h2>
-            <h2><b>24.04.2023</b></h2>
+        <div class="w3-display-bottom w3-text-white w3-center">
+					<div class="example">
+						<div id="flipdown" class="flipdown" ></div>
+					</div>
         </div>
     </header>
 
@@ -63,7 +64,7 @@
     <div class="w3-container w3-padding-64 w3-pale-red w3-grayscale-min" id="us">
         <div class="w3-content">
             <h1 class="w3-center w3-text-grey"><b>Arthi & Santhosh</b></h1>
-            <img class="w3-round w3-grayscale-min" src="images/pic1.jpg" style="width:100%;margin:32px 0">
+            <img class="w3-round w3-grayscale-min" src="images/ArtSan.PNG" style="width:100%;margin:32px 0">
             <p><i>You all know us. And we all know you. We are getting married lorem ipsum dolor sit amet, consectetur
                     adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
                     veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur
@@ -81,34 +82,63 @@
     <!-- Background photo -->
     <div class="w3-display-container bgimg2">
         <div class="w3-display-middle w3-text-white w3-center">
-            <h1 class="w3-jumbo">You Are Invited</h1><br>
-            <h2>Of course..</h2>
+            <!-- <h1 class="w3-jumbo">You Are Invited</h1><br>
+            <h2>Of course..</h2> -->
         </div>
     </div>
 
     <!-- Wedding information -->
     <div class="w3-container w3-padding-64 w3-pale-red w3-grayscale-min w3-center" id="wedding">
         <div class="w3-content">
-            <h1 class="w3-text-grey"><b>THE WEDDING</b></h1>
-            <img class="w3-round-large w3-grayscale-min" src="https://www.w3schools.com/w3images/wedding_location.jpg" style="width:100%;margin:64px 0">
+            <h1 class="w3-text-grey"><b></b></h1>
+			<style>
+				body,
+				h1,
+				h2 {
+					font-family: "Raleway", sans-serif
+				}
+	
+				body,
+					html {
+					height: 100%
+						}
+
+				p {
+					line-height: 2
+				}
+
+				.bgimg3 {
+					min-height: 100%;
+					background-position: center;
+					background-size: cover;
+				}
+				.bgimg3 {
+					background-image: url("https://www.w3schools.com/w3images/wedding_location.jpg")
+				}
+			</style>
+            <!-- <img class="w3-round-large w3-grayscale-min" src="https://www.w3schools.com/w3images/wedding_location.jpg" style="width:100%;margin:64px 0"> -->
             <div class="w3-row">
                 <div class="w3-half">
-                    <h2>When</h2>
-                    <p>Wedding Ceremony - 2:00pm</p>
-                    <p>Reception & Dinner - 5:00pm</p>
+                    <h2>Reception</h2>
+                    <p>23rd April 2023 7:00 pm</p>
+					
                 </div>
-                <div class="w3-half">
-                    <h2>Where</h2>
-                    <p>Some place, an address</p>
-                    <p>Some where, some address</p>
-                </div>
+				<div class="w3-half">
+					<h2>Muhurtham</h2>
+                    <p>24th April 2023 6:00 am</p>
+				</div>
+                
             </div>
         </div>
     </div>
 
     <!-- RSVP section -->
     <div class="w3-container w3-padding-64 w3-pale-red w3-center w3-wide" id="rsvp">
-        <h1>HOPE YOU CAN MAKE IT!</h1>
+        		<div class="w3-row">
+					<p><img src="images/map.PNG"></p>
+                    <h2>Sri Narayani Mahal</h2>
+                    <a href="https://goo.gl/maps/amchs8R7oiYkypoH6" target="_blank"><h3>Ariyur, Thirumalaikodi, Vellore</h3></a>
+				</div>
         <!-- <p class="w3-large">Kindly Respond By January, 2017</p>
         <p class="w3-xlarge">
             <button onclick="document.getElementById('id01').style.display='block'"
@@ -121,5 +151,35 @@
     <div class="w3-hide-small" style="margin-bottom:32px"> </div>
 
 </body>
+
+<script>
+		document.addEventListener('DOMContentLoaded', () => {
+
+		  // Unix timestamp (in seconds) to count down to
+		  var twoDaysFromNow = (new Date().getTime() / 1000) + (86400 * 33) + 1;
+
+		  // Set up FlipDown
+		  var flipdown = new FlipDown(twoDaysFromNow)
+
+			// Start the countdown
+			.start()
+
+			// Do something when the countdown ends
+			.ifEnded(() => {
+			  console.log('The countdown has ended!');
+			});
+
+		  // Toggle theme
+		  var interval = setInterval(() => {
+			let body = document.body;
+			body.classList.toggle('light-theme');
+			body.querySelector('#flipdown').classList.toggle('flipdown__theme-dark');
+			body.querySelector('#flipdown').classList.toggle('flipdown__theme-light');
+		  }, 5000);
+		  
+		  var ver = document.getElementById('ver');
+		  ver.innerHTML = flipdown.version;
+		});
+</script>
 
 </html>
