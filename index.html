@@ -10,7 +10,7 @@
             body,
             h1,
             h2 {
-                font-family: "Raleway", sans-serif
+                font-family: "Copperplate", sans-serif
             }
 
             body,
@@ -32,16 +32,14 @@
     <header class="w3-display-container w3-wide" id="home">
         <img class="w3-round w3-grayscale-min" src="images/First.png" style="width:100%;margin:32px 0">
     </header>
-
-    <!-- Navbar (sticky bottom) -->
-    <div class="w3-bottom w3-hide-small">
-        <div class="w3-bar w3-white w3-center w3-padding w3-opacity-min w3-hover-opacity-off" style="width:100%";>
-            <a href="#home" style="width:33%" class="w3-bar-item w3-button">Home</a>
-            <a href="#us" style="width:33%" class="w3-bar-item w3-button">Arthi & Santhosh</a>
-            <a href="#wedding" style="width:33%" class="w3-bar-item w3-button">Wedding</a>
-            <!-- <a href="#rsvp" style="width:25%" class="w3-bar-item w3-button w3-hover-black">RSVP</a> -->
-        </div>
+	
+	<!-- Timer -->
+    <div class="w3-container w3-padding-64 w3-grayscale-min">
+		<h1 class="w3-center w3-text-grey"><b>SAVE THE DATE</b></h1>
+		<h2 class="w3-center w3-text-grey"><b>24TH APRIL 2023</b></h2>
+		<h1 class="w3-center w3-text-grey"><p id="demo"></p></h1>
     </div>
+
 
     <!-- About / Jane And John -->
     <div class="w3-container w3-padding-64 w3-pale-red w3-grayscale-min" id="us">
@@ -57,10 +55,7 @@
         </div>
     </div>
 
-    <!-- Timer -->
-    <div class="w3-display-container">
-		<h2>Timer</h2>
-    </div>
+    
 
     <!-- Wedding information -->
     <div class="w3-container w3-padding-64 w3-pale-red w3-grayscale-min w3-center" id="wedding">
@@ -89,39 +84,49 @@
 				</div>
     </div>
 
-
+	
+	<!-- Navbar (sticky bottom) -->
+    <div class="w3-bottom w3-hide-small">
+        <div class="w3-bar w3-white w3-center w3-padding w3-opacity-min w3-hover-opacity-off" style="width:100%";>
+            <a href="#home" style="width:33%" class="w3-bar-item w3-button">Home</a>
+            <a href="#us" style="width:33%" class="w3-bar-item w3-button">Arthi & Santhosh</a>
+            <a href="#wedding" style="width:33%" class="w3-bar-item w3-button">Wedding</a>
+            <!-- <a href="#rsvp" style="width:25%" class="w3-bar-item w3-button w3-hover-black">RSVP</a> -->
+        </div>
+    </div>
   
     <div class="w3-hide-small" style="margin-bottom:32px"> </div>
 	
+	
 	<script>
-		document.addEventListener('DOMContentLoaded', () => {
+	// Set the date we're counting down to
+	var countDownDate = new Date("Apr 24, 2023 06:00:00").getTime();
 
-		  // Unix timestamp (in seconds) to count down to
-		  var twoDaysFromNow = (new Date().getTime() / 1000) + (86400 * 30) + 1;
+	// Update the count down every 1 second
+	var x = setInterval(function() {
 
-		  // Set up FlipDown
-		  var flipdown = new FlipDown(twoDaysFromNow)
+	  // Get today's date and time
+	  var now = new Date().getTime();
 
-			// Start the countdown
-			.start()
+	  // Find the distance between now and the count down date
+	  var distance = countDownDate - now;
 
-			// Do something when the countdown ends
-			.ifEnded(() => {
-			  console.log('The countdown has ended!');
-			});
+	  // Time calculations for days, hours, minutes and seconds
+	  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+	  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+	  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+	  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-		  // Toggle theme
-		  var interval = setInterval(() => {
-			let body = document.body;
-			body.classList.toggle('light-theme');
-			body.querySelector('#flipdown').classList.toggle('flipdown__theme-dark');
-			body.querySelector('#flipdown').classList.toggle('flipdown__theme-light');
-		  }, 5000);
-		  
-		  var ver = document.getElementById('ver');
-		  ver.innerHTML = flipdown.version;
-		});
+	  // Display the result in the element with id="demo"
+	  document.getElementById("demo").innerHTML = days + " D " + hours + " H "
+	  + minutes + " M " + seconds + " S " + "Left";
 
+	  // If the count down is finished, write some text
+	  if (distance < 0) {
+		clearInterval(x);
+		document.getElementById("demo").innerHTML = "It's Happening Today";
+	  }
+	}, 1000);
 	</script>
 
 </body>
